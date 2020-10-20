@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: elephant
+  labels:
+    purpose: resource-limits
+spec:
+  containers:
+    - name: polinux
+      image: polinux/stress

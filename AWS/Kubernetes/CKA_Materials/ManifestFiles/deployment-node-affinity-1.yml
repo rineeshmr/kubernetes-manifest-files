@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: red
+  labels:
+    type: node-affinity
+    color: red
+spec:
+  template:
+    metadata:
+      name: nginx-container
+      labels:
+        color: red
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: Exists
+  replicas: 3
+  selector:
+    matchLabels:
+      color: red
+
+
