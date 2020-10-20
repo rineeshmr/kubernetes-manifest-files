@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cka-myapp
+  labels:
+    tier: front-end-pod
+    lifecycle: test-pod
+spec:
+  containers:
+   - name: myapp-mainpod
+     image: nginx
