@@ -8,6 +8,6 @@ spec:
   containers:
     - name: webapp-color
       image: kodekloud/webapp-color
-      env:
-        - name: APP_COLOR
-          value: green
+      envFrom:
+        - configMapRef:
+            name: webapp-config-map

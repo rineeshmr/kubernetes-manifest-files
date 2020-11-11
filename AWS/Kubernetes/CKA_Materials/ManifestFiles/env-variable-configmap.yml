@@ -4,6 +4,7 @@ metadata:
   name: webapp-config-map
 data:
     APP_COLOR: darkblue
+    tier: front-end
 
 
 
