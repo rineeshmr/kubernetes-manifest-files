@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: node-port-service
+    kind: load-balancer
+  name: load-balancer
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+spec:
+  type: LoadBalancer
+  selector:
+    name: my-nginx-pod
+  clusterIP: 10.104.106.110
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: redis
+    where: frontend
+  name: nginx-pod
+spec:
+  containers:
+    - name: redis
+      image: redis

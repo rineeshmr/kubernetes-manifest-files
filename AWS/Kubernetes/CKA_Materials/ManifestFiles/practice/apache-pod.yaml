@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apache-pod
+  labels:
+    container: apache-ws
+spec:
+  containers:
+    - name: apache-ws
+      image: httpd
